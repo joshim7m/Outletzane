@@ -1,6 +1,116 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/Logo.png"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "menu1_title": "Top Categories",
+          "menu2_title": "Help",
+          "newsletter_title": "Subscribe to our newsletter",
+          "newsletter_text": "Subscribe to our newsletter and get informed about discounted offers",
+          "copyright": "Copyright 2021 Dokan"
+        }
+      },
+      "1635662230433b84d3": {
+        "type": "hero-section",
+        "settings": {
+          "hero_bg": "shopify:\/\/shop_images\/hero-bg.png",
+          "title": "Fresh products from Dokan with love",
+          "content": "<p>In Mama T’s Afro-Shop the family comes first. However, not only family Omorogbe, but all African families who are far away from their mother country and still want to feel at home in Germany.<\/p>",
+          "url": "\/",
+          "shop_video": "https:\/\/youtu.be\/fw-0xMobkCo"
+        }
+      },
+      "1635662238cc438d4a": {
+        "type": "storefront-view",
+        "blocks": {
+          "51319983-f154-4ee7-8343-68ff89e423ad": {
+            "type": "payment-icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/mastercard.png"
+            }
+          },
+          "5602e1f5-62cd-42af-adba-8e2aaa94a35d": {
+            "type": "payment-icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/visa.png"
+            }
+          },
+          "c86986db-e235-426c-9fa3-a9231b82193b": {
+            "type": "payment-icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/klarna.png"
+            }
+          },
+          "12ff728f-a844-498c-8298-9467e43e1463": {
+            "type": "payment-icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/sofort.png"
+            }
+          },
+          "52c9c053-a86e-4d88-982f-8de76d36d2e4": {
+            "type": "payment-icon",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/paypal.png"
+            }
+          }
+        },
+        "block_order": [
+          "51319983-f154-4ee7-8343-68ff89e423ad",
+          "5602e1f5-62cd-42af-adba-8e2aaa94a35d",
+          "c86986db-e235-426c-9fa3-a9231b82193b",
+          "12ff728f-a844-498c-8298-9467e43e1463",
+          "52c9c053-a86e-4d88-982f-8de76d36d2e4"
+        ],
+        "settings": {
+          "store_img": "shopify:\/\/shop_images\/intro-quantity.png",
+          "title": "We have quality products for a better life",
+          "content": "<p>Visit us now! we have a large selection of African food and cosmetics in our online shop. What are you waiting for?<\/p>"
+        }
+      },
+      "16356623019451bed2": {
+        "type": "bestsellers",
+        "settings": {
+          "best_collection": "best-sellers"
+        }
+      },
+      "16356623765020f9e1": {
+        "type": "top-categories",
+        "settings": {
+        }
+      },
+      "1635662398192ab667": {
+        "type": "coantact-section",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/shop-map.png",
+          "opening_hours": "MON – SAT: 10:00am – 20:00pm",
+          "address": "7\/d, Sec-09, Uttara, Dhaka-1212",
+          "phone": "01560 70 444 99",
+          "email": "hello@outletzane.com"
+        }
+      }
+    },
+    "content_for_index": [
+      "1635662230433b84d3",
+      "1635662238cc438d4a",
+      "16356623019451bed2",
+      "16356623765020f9e1",
+      "1635662398192ab667"
+    ]
+  },
   "presets": {
-    "Default": { }
+    "Default": {
+    }
   }
 }
