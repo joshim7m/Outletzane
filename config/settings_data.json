@@ -77,11 +77,35 @@
           "title": "We have quality products for a better life",
           "content": "<p>Visit us now! we have a large selection of African food and cosmetics in our online shop. What are you waiting for?<\/p>"
         }
+      },
+      "16356623019451bed2": {
+        "type": "bestsellers",
+        "settings": {
+          "best_collection": "best-sellers"
+        }
+      },
+      "16356623765020f9e1": {
+        "type": "top-categories",
+        "settings": {
+        }
+      },
+      "1635662398192ab667": {
+        "type": "coantact-section",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/shop-map.png",
+          "opening_hours": "MON – SAT: 10:00am – 20:00pm",
+          "address": "7\/d, Sec-09, Uttara, Dhaka-1212",
+          "phone": "01560 70 444 99",
+          "email": "hello@outletzane.com"
+        }
       }
     },
     "content_for_index": [
       "1635662230433b84d3",
-      "1635662238cc438d4a"
+      "1635662238cc438d4a",
+      "16356623019451bed2",
+      "16356623765020f9e1",
+      "1635662398192ab667"
     ]
   },
   "presets": {
