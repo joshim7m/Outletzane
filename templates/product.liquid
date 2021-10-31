@@ -1,0 +1,47 @@
+    <div class="product-section" style="padding-top: 100px;">
+      <div class="container">
+        <div class="product-row">
+          <div class="rowcol">
+            <div class="product-images-box">
+              <div class="product-images">
+                <img src="{{ product.featured_image | img_url: 'master' }}" alt="">
+            </div>
+            </div>
+          </div>
+          <div class="rowcol">
+            <div class="product-summary">
+              <div class="product-info">
+                <h1 class="product-title">
+                  {{ product.title }}
+                </h1>
+                <div class="availity">In Stock</div>
+                <div class="description">
+                  <h4>Description</h4>
+                  {{ product.description }}
+                </div>
+              </div>
+              <div class="product-form">
+                {% render 'product-form' %}
+              </div>
+            </div>
+          </div>
+          <div class="rowcol third">
+            <div class="reviews-info">
+              <p><span class="review-percent">95%</span> Of reviewers recomended <br> AFP - Gari Yellow</p>
+              <div class="review-count">50 reviews</div>
+
+              <div class="payment-info">
+                <h6>Flexible Payment</h6>
+                <div class="payment-icon">
+                   <img src="{{ 'visa.png' | asset_img_url: 'master' }}" alt="">
+                    <img src="{{ 'mastercard.png' | asset_img_url: 'master' }}" alt="">
+                    <img src="{{ 'klarna.png' | asset_img_url: 'master' }}" alt="">
+                    <img src="{{ 'paypal.png' | asset_img_url: 'master' }}" alt="">
+                    <img src="{{ 'sofort.png' | asset_img_url: 'master' }}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

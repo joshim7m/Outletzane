@@ -1,0 +1,58 @@
+{% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+
+ <div class="variations">
+  <select name="id" id="variant_id" v-model="form.id" class="form-control">
+    {% for variant in product.variants %}
+      <option
+        {% if variant == product.current_variant %}selected="selected"{% endif %}
+        value="{{ variant.id }}">
+          {{ variant.title }}
+      </option>
+    {% endfor %}
+  </select>
+</div>
+
+<div class="submission-box">
+
+  <h4 class="price">$32.99</h4>
+   <input type="number" class="form-control" v-model="form.quantity" min="1">
+  <a class="add-to-cart-btn" href="#" @click="addToCart">
+    <i data-feather="shopping-cart"></i> Add to cart</a>
+
+</div>
+{% endform %}
+
+
+<script>
+  if(document.querySelector('.shopify-product-form')){
+    
+
+    const productForm = Vue.createApp({
+      delimiters: ['${', '}'],
+      data(){
+        return {
+          form: {
+            id: {{ product.first_available_variant.id }},
+            quantity: 1,
+          }
+        }
+      },
+
+      methods: {
+        addToCart(){
+          axios.post('/cart/add.js', this.form)
+          .then(response => {
+            store.getCart()
+          })
+          .catch(error => {
+            console.log(error)
+          })
+        }
+
+      }
+
+
+
+    }).mount('.shopify-product-form');
+  }
+</script>

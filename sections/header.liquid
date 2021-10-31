@@ -1,0 +1,177 @@
+    
+<header id="header" class="header">
+  <div class="container">
+    <div class="row d-lg-none">
+      <div class="brand-mobile text-center">
+        <img src="{{ 'logo-small.png' | asset_img_url: 'master' }}" alt="">
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="header__brand">
+          <img src="{{ 'logo-small.png' | asset_img_url: 'master' }}" alt="">
+        </div>
+      </div>
+      <div class="col-6 d-flex justify-content-lg-center">
+        <div class="header__menu">
+          <div class="menu-trigger d-lg-none">
+            <i data-feather="menu"></i>
+          </div>
+          <nav class="mobile-nav d-lg-none">
+            <div class="mobile-nav__header">
+              <i class="nav-close" data-feather="x"></i>
+            </div>
+            <div class="mobile-nav__body">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li class="has-sub"><a href="#">Shop</a>
+                  <ul class="dropdown-box">
+                    <li><a href="#">Grocery</a></li>
+                    <li><a href="#">Vegetables</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <nav class="main-nav d-none d-lg-block">
+            <ul>
+              <li><a href="#">Home</a></li>
+               <li class="has-sub"><a href="#">Shop</a>
+                  <!-- <ul class="dropdown-box">
+                    <li><a href="#">Grocery</a></li>
+                    <li><a href="#">Vegetables</a></li>
+                  </ul> -->
+                </li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="header__ecom_icons d-flex justify-content-end">
+          <a id="search-trigger" href="javascript:void(0)">
+            <i data-feather="search"></i>
+          </a>
+          <a id="user" class="d-none d-lg-block" href="javascript:void(0)">
+            <i data-feather="user"></i>
+          </a>
+          <a id="cartDrawer-trigger" class="d-none d-lg-block" href="javascript:void(0)">
+            <i data-feather="shopping-bag"></i> 
+            <template v-if="cart">
+               ${cart.item_count}
+             </template>
+          </a>
+        </div>
+      </div>
+    </div>
+
+<!--     ECOMMERCE SEARCH BOX -->
+
+    <div class="search-box" class="d-md-none">
+      <div class="search-box__header">
+        <h4>Search for products</h4>
+        <i id="search-box-close" data-feather="x"></i>
+      </div>
+      <div class="search-box__body">
+        <div class="search-form">
+          <form action="">
+            <input type="text" placeholder="Search..">
+            <button type="submit"><i data-feather="search"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+<!--     ECOMMERCE CART DRAWER -->
+
+    <div class="cartDrawer">
+      {% render 'mini-cart' %}
+    </div>
+
+  </div>
+</header>
+
+
+
+{% schema %}
+  {
+    "name": {
+      "en": "Header"
+    },
+    "settings":[
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": {
+        "en": "Upload Logo"
+      }
+    }
+  ]
+}
+{% endschema %}
+
+
+<script>
+if(document.querySelector('#header')){
+  const headerCart = Vue.createApp({
+  
+  delimiters: ['${', '}'],
+
+   data() {
+    return {
+      cartData: store.state.cartState
+    }
+   },
+   created(){
+      store.getCart();
+    },
+
+   methods: {
+    decrement(item){
+      const data = {
+        'id': item.key,
+        'quantity': item.quantity - 1
+      }
+      axios.post('/cart/change.js', data)
+      .then(response => {
+        store.getCart()
+      })
+      .catch(error => console.log(error))
+    },
+    increment(item){
+      const data = {
+        'id': item.key,
+        'quantity': item.quantity + 1
+      }
+      axios.post('/cart/change.js', data)
+      .then(response => {
+        store.getCart()
+      })
+      .catch(error => console.log(error))
+    },
+
+   },
+
+   computed: {
+    miniCart(){
+      return miniCartState.hidden
+    },
+    menuDrawer(){
+      return menuState.hidden
+    },
+    cart(){
+      return this.cartData[0]
+    }
+   }
+
+
+  }).mount('#header');
+}  
+</script>
